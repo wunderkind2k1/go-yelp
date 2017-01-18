@@ -1,10 +1,6 @@
 package yelp
 
-import (
-	"testing"
-
-	"github.com/guregu/null"
-)
+import "testing"
 
 // TestGeneralOptions will verify search with location and search term.
 func TestGeneralOptions(t *testing.T) {
@@ -60,7 +56,7 @@ func TestLimit(t *testing.T) {
 	options := SearchOptions{
 		GeneralOptions: &GeneralOptions{
 			Term:  "Coffee",
-			Limit: null.IntFrom(15),
+			Limit: IntFrom(15),
 		},
 		LocationOptions: &LocationOptions{
 			Location: "Seattle",

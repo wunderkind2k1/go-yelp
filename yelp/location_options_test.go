@@ -1,10 +1,6 @@
 package yelp
 
-import (
-	"testing"
-
-	"github.com/guregu/null"
-)
+import "testing"
 
 // TestLocationOptions will check using location options by term.
 func TestLocationOptions(t *testing.T) {
@@ -32,8 +28,8 @@ func TestLocationWithCoordinates(t *testing.T) {
 		LocationOptions: &LocationOptions{
 			"bellevue",
 			&CoordinateOptions{
-				Latitude:  null.FloatFrom(37.788022),
-				Longitude: null.FloatFrom(-122.399797),
+				Latitude:  FloatFrom(37.788022),
+				Longitude: FloatFrom(-122.399797),
 			},
 		},
 	}

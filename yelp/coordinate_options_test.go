@@ -1,21 +1,17 @@
 package yelp
 
-import (
-	"testing"
-
-	"github.com/guregu/null"
-)
+import "testing"
 
 // TestCoordinateOptions will check using location options with bounding coordinates.
 func TestCoordinateOptions(t *testing.T) {
 	client := getClient(t)
 	options := SearchOptions{
 		CoordinateOptions: &CoordinateOptions{
-			null.FloatFrom(37.9),
-			null.FloatFrom(-122.5),
-			null.FloatFromPtr(nil),
-			null.FloatFromPtr(nil),
-			null.FloatFromPtr(nil),
+			FloatFrom(37.9),
+			FloatFrom(-122.5),
+			FloatFrom(0),
+			FloatFrom(0),
+			FloatFrom(0),
 		},
 	}
 	result, err := client.DoSearch(options)

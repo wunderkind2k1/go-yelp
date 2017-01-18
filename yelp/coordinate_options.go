@@ -3,19 +3,17 @@ package yelp
 import (
 	"errors"
 	"fmt"
-
-	"github.com/guregu/null"
 )
 
 // CoordinateOptions are used with complex searches for locations.
 // The geographic coordinate format is defined as:
 // ll=latitude,longitude,accuracy,altitude,altitude_accuracy
 type CoordinateOptions struct {
-	Latitude         null.Float // Latitude of geo-point to search near (required)
-	Longitude        null.Float // Longitude of geo-point to search near (required)
-	Accuracy         null.Float // Accuracy of latitude, longitude (optional)
-	Altitude         null.Float // Altitude (optional)
-	AltitudeAccuracy null.Float // Accuracy of altitude (optional)
+	Latitude         Float // Latitude of geo-point to search near (required)
+	Longitude        Float // Longitude of geo-point to search near (required)
+	Accuracy         Float // Accuracy of latitude, longitude (optional)
+	Altitude         Float // Altitude (optional)
+	AltitudeAccuracy Float // Accuracy of altitude (optional)
 }
 
 // getParameters will reflect over the values of the given

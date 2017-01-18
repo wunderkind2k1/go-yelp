@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"os"
 	"testing"
+	"fmt"
 )
 
 const (
@@ -36,7 +37,7 @@ func getClient(t *testing.T) *Client {
 	var o *AuthOptions
 
 	// start by looking for the keys in config.json
-	data, err := ioutil.ReadFile("../config.json")
+	data, err := ioutil.ReadFile("config.json")
 	if err != nil {
 		// if the file isn't there, check environment variables
 		o = &AuthOptions{
@@ -70,6 +71,8 @@ func TestSimpleSearch(t *testing.T) {
 	// verify basic fields are returned
 	assert(t, result.Region.Span.LatitudeDelta != 0, "latitude is returned")
 	assert(t, result.Region.Span.LongitudeDelta != 0, "longitude is returned")
+
+	fmt.Println(result.Businesses[0].Name)
 
 }
 

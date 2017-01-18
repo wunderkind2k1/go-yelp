@@ -29,6 +29,7 @@ type AuthOptions struct {
 	ConsumerSecret    string // Consumer Secret from the yelp API access site.
 	AccessToken       string // Token from the yelp API access site.
 	AccessTokenSecret string // Token Secret from the yelp API access site.
+
 }
 
 // Client manages all searches.  All searches are performed from an instance of a client.
